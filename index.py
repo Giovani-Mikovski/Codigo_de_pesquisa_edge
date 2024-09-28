@@ -1,16 +1,17 @@
 
 """
 PASSO 01: acessar o edge
-PASSO 02: digitar e enter (10 vezes)
+PASSO 02: pesquisa - digitar e enter (10 vezes)
 PASSO 03: clicar na "medalha" e em "exibr painel"
 PASSO 04: fazer conjunto diário
 PASSO 05: rolar e fazer mais atividades
+PASSO 06: fechar edge
 """
 
 import pyautogui #Controla mouse e teclado
 import time #Controla o tempo
-import pandas as pd
-import random
+import pandas as pd #Lê a tabela de termos de pesquisa
+import random #Gera números aleatórios
 
 pyautogui.PAUSE=0.5 #Espera o sistema iniciar
 
@@ -19,22 +20,21 @@ pyautogui.press("win")
 pyautogui.write("edge")
 pyautogui.press("enter")
 
-'PASSO 2: digitar e enter (10 vezes)'
+'PASSO 2: pesquisa - digitar e enter (10 vezes)'
 tabela_termos=pd.read_csv("termos_pesquisa.csv") #Lê os termos
 
 for i in range(10):
-    posicao_termo=random.randint(1,50) #Gera um número aleatório entre 1 e 5 que será utilzado como index
+    posicao_termo=random.randint(1,49) #Gera um número aleatório entre 1 e 5 que será utilzado como index
     termo=tabela_termos.loc[posicao_termo,"termos"] #Pega o termo do index definido acima
     pyautogui.write(str(termo)) #Escreve na pesquisa do edge
     pyautogui.press("enter")
     time.sleep(5)
-'''
+
 'PASSO 03: clicar na "medalha" e em "exibr painel"'
 pyautogui.click(x=1745, y=146) #Clicar na "medalha"
 time.sleep(3)
 
 pyautogui.click(x=1777, y=208) #Clicar em "Exibir painel"
-time.sleep(10)
 
 'PASSO 04: fazer conjunto diário'
 time.sleep(10)
@@ -49,7 +49,7 @@ conjunto_diario(1163,936) #Clica no quadrado 2
 conjunto_diario(1593,923) #Clica no quadrado 3
 
 'PASSO 05: rolar e fazer mais atividades'
-time.sleep(10)
+time.sleep(5)
 pyautogui.scroll(-1100) # Rola para chegar em mais atividades
 
 def mais_atividades(px, py):
@@ -66,4 +66,6 @@ mais_atividades(289,795) #Clica no quadrado 1 0
 mais_atividades(714,818) #Clica no quadrado 1 1
 mais_atividades(1155,780) #Clica no quadrado 1 2
 mais_atividades(1568,791) #Clica no quadrado 1 3
-'''
+
+'PASSO 06: fechar edge'
+pyautogui.hotkey("alt","f4") #Fecha o edge
