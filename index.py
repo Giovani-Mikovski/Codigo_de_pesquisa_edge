@@ -6,12 +6,14 @@ PASSO 03: clicar na "medalha" e em "exibr painel"
 PASSO 04: fazer conjunto diário
 PASSO 05: rolar e fazer mais atividades
 PASSO 06: fechar edge
+PASSO 07: exibir notificação na tela
 """
 
 import pyautogui #Controla mouse e teclado
 import time #Controla o tempo
 import pandas as pd #Lê a tabela de termos de pesquisa
 import random #Gera números aleatórios
+from winotify import Notification #Notificação 
 
 pyautogui.PAUSE=0.5 #Espera o sistema iniciar
 
@@ -69,3 +71,8 @@ mais_atividades(1568,791) #Clica no quadrado 1 3
 
 'PASSO 06: fechar edge'
 pyautogui.hotkey("alt","f4") #Fecha o edge
+
+'PASSO 07: exibir notificação na tela'
+noticacao=Notification(app_id="Pesquisa no edge", title="Código de pesquisa no edge concluído", msg="Pesquisa automática para pontuação no edge executada com sucesso", duration="long", icon=r"C:\Users\giova\OneDrive\Área de Trabalho\Programação\Codigo_edge\img\icon_py.png") #Descrição das características das notificações
+
+noticacao.show() #Mostra a notificação
