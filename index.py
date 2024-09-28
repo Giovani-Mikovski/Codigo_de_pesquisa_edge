@@ -9,6 +9,8 @@ PASSO 05: rolar e fazer mais atividades
 
 import pyautogui #Controla mouse e teclado
 import time #Controla o tempo
+import pandas as pd
+import random
 
 pyautogui.PAUSE=0.5 #Espera o sistema iniciar
 
@@ -18,11 +20,15 @@ pyautogui.write("edge")
 pyautogui.press("enter")
 
 'PASSO 2: digitar e enter (10 vezes)'
-for i in range(10):
-    pyautogui.write("abc")
-    pyautogui.press("enter")
-    time.sleep(3)
+tabela_termos=pd.read_csv("termos_pesquisa.csv") #Lê os termos
 
+for i in range(10):
+    posicao_termo=random.randint(1,50) #Gera um número aleatório entre 1 e 5 que será utilzado como index
+    termo=tabela_termos.loc[posicao_termo,"termos"] #Pega o termo do index definido acima
+    pyautogui.write(str(termo)) #Escreve na pesquisa do edge
+    pyautogui.press("enter")
+    time.sleep(5)
+'''
 'PASSO 03: clicar na "medalha" e em "exibr painel"'
 pyautogui.click(x=1745, y=146) #Clicar na "medalha"
 time.sleep(3)
@@ -55,7 +61,9 @@ def mais_atividades(px, py):
 mais_atividades(304,361) #Clica no quadrado 0 0
 mais_atividades(744,410) #Clica no quadrado 0 1
 mais_atividades(1169,305) #Clica no quadrado 0 2
+mais_atividades(1582,347) #Clica no quadrado 0 3 
 mais_atividades(289,795) #Clica no quadrado 1 0
 mais_atividades(714,818) #Clica no quadrado 1 1
 mais_atividades(1155,780) #Clica no quadrado 1 2
 mais_atividades(1568,791) #Clica no quadrado 1 3
+'''
