@@ -29,8 +29,10 @@ pyautogui.press("enter")
 tabela_termos=pd.read_csv("termos_pesquisa.csv") #Lê os termos
 
 for i in range(10):
-    posicao_termo=random.randint(1,49) #Gera um número aleatório entre 1 e 50 que será utilzado como index
+    posicao_termo=random.randint(1,99) #Gera um número aleatório entre 1 e 50 que será utilzado como index
     termo=tabela_termos.loc[posicao_termo,"termos"] #Pega o termo do index definido acima
+    if i==0:
+        time.sleep(3)
     pyautogui.write(str(termo)) #Escreve na pesquisa do edge
     pyautogui.press("enter")
     time.sleep(5)
