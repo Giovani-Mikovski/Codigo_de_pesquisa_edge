@@ -28,7 +28,7 @@ pyautogui.press("enter")
 'PASSO 2: pesquisar - digitar e enter (10 vezes)'
 tabela_termos=pd.read_csv("termos_pesquisa.csv") #Lê os termos
 
-for i in range(30):
+for i in range(35):
     posicao_termo=random.randint(1,99) #Gera um número aleatório entre 1 e 50 que será utilzado como index
     termo=tabela_termos.loc[posicao_termo,"termos"] #Pega o termo do index definido acima
     if i==0:
