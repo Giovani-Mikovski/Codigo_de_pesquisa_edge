@@ -15,15 +15,17 @@ PASSO 07:
 
 'PASSO 01: acessar o start'
 pyautogui.press("win")
+time.sleep(3)
 pyautogui.write("bluestacks")
+time.sleep(3)
 pyautogui.press("enter")
 
-time.sleep(15)
+time.sleep(60)
 
 pyautogui.click(287,440) #Clica em meus jogos
 time.sleep(3)
 pyautogui.click(502,397) #Clica no start
-time.sleep(60)
+time.sleep(100)
 
 'PASSO 02: clicar no rewards'
 pyautogui.click(750,183) #Clica na área do rewards
