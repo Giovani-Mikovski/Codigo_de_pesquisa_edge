@@ -1,6 +1,7 @@
+"CÓDIGO DE PESQUISA NO EDGE"
 
 """
-CÓDIGO DE PESQUISA NO EDGE
+PARTE 1: nível 1
 
 PASSO 01: acessar o edge
 PASSO 02: pesquisar - digitar e enter (10 vezes)
