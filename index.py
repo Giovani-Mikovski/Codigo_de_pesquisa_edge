@@ -44,10 +44,12 @@ while len(Posicoes)<=30:
         time.sleep(5)
 
 'PASSO 03: clicar na "medalha" e em "exibr painel"'
-pyautogui.click(x=1745, y=146) #Clica na "medalha"
+pyautogui.hotkey("ctrl","t") #Abre outra guia para evitar bug
+
+pyautogui.click(x=1743, y=169, duration=2) #Clica na "medalha"
 time.sleep(3)
 
-pyautogui.click(x=1777, y=208) #Clica em "Exibir painel"
+pyautogui.click(x=1510, y=226) #Clica em "Microsoft Rewards"
 
 'PASSO 04: fazer conjunto diário'
 time.sleep(10)
