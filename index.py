@@ -23,22 +23,23 @@ pyautogui.PAUSE=0.5 #Espera o sistema iniciar
 
 'PASSO 1: acessar o edge'
 pyautogui.press("win")
+time.sleep(3)
 pyautogui.write("edge")
+time.sleep(3)
 pyautogui.press("enter")
 
 'PASSO 2: pesquisar - digitar e enter (10 vezes)'
 tabela_termos=pd.read_csv("termos_pesquisa.csv") #Lê os termos
 
 Posicoes=[]
-while len(Posicoes)<=30:
-    posicao_termo=random.randint(1,99) #Gera um número aleatório entre 1 e 99 que será utilzado como index
+while len(Posicoes)<=35:
+    posicao_termo=random.randint(1,149) #Gera um número aleatório entre 1 e 99 que será utilzado como index
     if posicao_termo in Posicoes: #Se o termo já foi pesquisado, passe
         pass
     else: #Se o termo não foi pesquisado, faça
         Posicoes.append(posicao_termo)
         termo=tabela_termos.loc[posicao_termo,"termos"] #Pega o termo do index definido acima
-        if len(Posicoes)==0:
-            time.sleep(3)
+        time.sleep(1.5)
         pyautogui.write(str(termo)) #Escreve na pesquisa do edge
         pyautogui.press("enter")
         time.sleep(5)
