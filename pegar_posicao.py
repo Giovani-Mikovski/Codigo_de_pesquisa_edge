@@ -1,11 +1,12 @@
 import time
 import pyautogui
 
-time.sleep(10)
+time.sleep(5)
 print(pyautogui.position())
 
-"MEDALHA: Point(x=1743, y=169)"
-"MICROSOFT REWARDS: Point(x=1510, y=226)"
+"MEDALHA: Point(x=1611, y=149)"
+"EXIBIR PAINEL: Point(x=1772, y=211)"
+"FECHAR TELA BRANCA: Point(x=1773, y=758)"
 "PRIMEIRO QUADRADO: Point(x=563, y=912)"
 "SEGUNDO QUADRADO: Point(x=1163, y=936)"
 "TERCEIRO QUADRADO: Point(x=1593, y=923)"
