@@ -4,7 +4,7 @@ import pyautogui
 time.sleep(5)
 print(pyautogui.position())
 
-"MEDALHA: Point(x=1611, y=149)"
+"MEDALHA: Point(x=1615, y=147)"
 "EXIBIR PAINEL: Point(x=1772, y=211)"
 "FECHAR TELA BRANCA: Point(x=1773, y=758)"
 "PRIMEIRO QUADRADO: Point(x=563, y=912)"

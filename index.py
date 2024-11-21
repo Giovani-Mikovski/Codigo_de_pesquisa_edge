@@ -41,7 +41,7 @@ while len(Posicoes)<=35:
         time.sleep(5)
 
 'PASSO 03: clicar na "medalha" e em "exibr painel"'
-pyautogui.click(x=1611, y=149, duration=2) #Clica na "medalha"
+pyautogui.click(x=1615, y=147, duration=2) #Clica na "medalha"
 time.sleep(3)
 
 pyautogui.click(x=1772, y=211) #Clica em "Exibir painel"
