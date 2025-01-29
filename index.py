@@ -13,7 +13,6 @@ import pyautogui #Controla mouse e teclado
 import time #Controla o tempo
 import pandas as pd #Lê a tabela de termos de pesquisa
 import random #Gera números aleatórios
-from winotify import Notification #Notificação 
 
 pyautogui.PAUSE=0.5 #Espera o sistema iniciar
 
@@ -41,40 +40,46 @@ while len(Posicoes)<=35:
         time.sleep(5)
 
 'PASSO 03: clicar na "medalha" e em "exibr painel"'
-pyautogui.click(x=1615, y=147, duration=2) #Clica na "medalha"
+#Quando tem o celular
+#pyautogui.click(x=1615, y=152, duration=2) #Clica na "medalha"
+
+#Quando NÃO tem o celular
+pyautogui.click(x=1741, y=151, duration=2) #Clica na "medalha"
 time.sleep(3)
 
-pyautogui.click(x=1772, y=211) #Clica em "Exibir painel"
+pyautogui.click(x=1772, y=211, duration=1) #Clica em "Exibir painel"
 
 'PASSO 04: fazer conjunto diário'
-time.sleep(10)
+time.sleep(3)
+#Quando tem as pesquisas em alta
+#pyautogui.scroll(-300) 
 def conjunto_diario(px, py):
-    pyautogui.click(x=1773, y=758) #Fecha tela branca
-    pyautogui.click(px, py) #Clica no quadrado
+    #pyautogui.click(x=1773, y=758) #Fecha tela branca
+    pyautogui.click(px, py, duration=1) #Clica no quadrado
     time.sleep(5)
     pyautogui.hotkey("ctrl","w") #Fecha a guia
     time.sleep(3)
 
-conjunto_diario(563,912) #Clica no quadrado 1
-conjunto_diario(1163,936) #Clica no quadrado 2
-conjunto_diario(1593,923) #Clica no quadrado 3
+conjunto_diario(424,1023) #Clica no quadrado 1
+conjunto_diario(1163,1009) #Clica no quadrado 2
+conjunto_diario(1603,1012) #Clica no quadrado 3
 
 'PASSO 05: rolar e fazer mais atividades'
 time.sleep(5)
-pyautogui.click(x=1773, y=758) #Fecha tela branca
-pyautogui.scroll(-1100) #Rola para chegar em mais atividades
+#pyautogui.click(x=1773, y=758) #Fecha tela branca
+pyautogui.scroll(-1100) #Rola para chegar em mais atividades""
 
 def mais_atividades(px, py):
-    pyautogui.click(px, py) #Clica no quadrado
+    pyautogui.click(px, py, duration=1) #Clica no quadrado
     time.sleep(5)
     pyautogui.hotkey("ctrl","w") #Fecha a guia
     time.sleep(3)
 
 mais_atividades(304,361) #Clica no quadrado 0 0
 mais_atividades(744,410) #Clica no quadrado 0 1
-mais_atividades(1169,305) #Clica no quadrado 0 2
+mais_atividades(1158,440) #Clica no quadrado 0 2
 mais_atividades(1582,347) #Clica no quadrado 0 3 
-mais_atividades(289,795) #Clica no quadrado 1 0
-mais_atividades(714,818) #Clica no quadrado 1 1
-mais_atividades(1155,780) #Clica no quadrado 1 2
-mais_atividades(1568,791) #Clica no quadrado 1 3
+mais_atividades(291,916) #Clica no quadrado 1 0
+mais_atividades(740,911) #Clica no quadrado 1 1
+mais_atividades(1169,890) #Clica no quadrado 1 2
+mais_atividades(1609,925) #Clica no quadrado 1 3
