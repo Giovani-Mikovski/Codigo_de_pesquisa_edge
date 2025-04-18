@@ -23,12 +23,12 @@ pyautogui.write("edge")
 time.sleep(3)
 pyautogui.press("enter")
 
-'PASSO 2: pesquisar - digitar e enter (36 vezes)'
+'PASSO 2: pesquisar - digitar e enter (10 vezes)'
 tabela_termos=pd.read_csv("termos_pesquisa.csv") #Lê os termos
 
 Posicoes=[]
-while len(Posicoes)<=35:
-    posicao_termo=random.randint(1,149) #Gera um número aleatório entre 1 e 99 que será utilzado como index
+while len(Posicoes)<=15: #Faz 16 pesquisas para garantir que não repete
+    posicao_termo=random.randint(1,149) #Gera um número aleatório entre 1 e 149 que será utilzado como index
     if posicao_termo in Posicoes: #Se o termo já foi pesquisado, passe
         pass
     else: #Se o termo não foi pesquisado, faça
@@ -41,20 +41,19 @@ while len(Posicoes)<=35:
 
 'PASSO 03: clicar na "medalha" e em "exibr painel"'
 #Quando tem o celular
-#pyautogui.click(x=1615, y=152, duration=2) #Clica na "medalha"
+pyautogui.click(x=1615, y=152, duration=2) #Clica na "medalha"
 
 #Quando NÃO tem o celular
-pyautogui.click(x=1741, y=151, duration=2) #Clica na "medalha"
+#pyautogui.click(x=1741, y=151, duration=2) #Clica na "medalha"
 time.sleep(3)
 
 pyautogui.click(x=1772, y=211, duration=1) #Clica em "Exibir painel"
 
 'PASSO 04: fazer conjunto diário'
-time.sleep(3)
-#Quando tem as pesquisas em alta
-#pyautogui.scroll(-300) 
+time.sleep(5)
+pyautogui.scroll(-100) #Rola para chegar em conjunto diário
+
 def conjunto_diario(px, py):
-    #pyautogui.click(x=1773, y=758) #Fecha tela branca
     pyautogui.click(px, py, duration=1) #Clica no quadrado
     time.sleep(5)
     pyautogui.hotkey("ctrl","w") #Fecha a guia
@@ -65,9 +64,8 @@ conjunto_diario(1163,1009) #Clica no quadrado 2
 conjunto_diario(1603,1012) #Clica no quadrado 3
 
 'PASSO 05: rolar e fazer mais atividades'
-time.sleep(5)
-#pyautogui.click(x=1773, y=758) #Fecha tela branca
-pyautogui.scroll(-1100) #Rola para chegar em mais atividades""
+time.sleep(3)
+pyautogui.scroll(-1000) #Rola para chegar em mais atividades
 
 def mais_atividades(px, py):
     pyautogui.click(px, py, duration=1) #Clica no quadrado
