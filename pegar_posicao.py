@@ -4,6 +4,7 @@ import pyautogui
 time.sleep(5)
 print(pyautogui.position())
 
+"Barra de pesuisa do Edge: Point(x=341, y=153)"
 "MEDALHA com celular: Point(x=1615, y=152)"
 "MEDALHA sem celular: Point(x=1741, y=151)"
 "EXIBIR PAINEL: Point(x=1772, y=211)"
